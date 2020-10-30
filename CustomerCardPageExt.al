@@ -36,6 +36,17 @@ pageextension 70000 CustomerCardExt extends "Customer Card"
                     Report.Run(Report::"Aged Accounts Receivable NA");
                 end;
             }
+            action(SupplierIDUpdate)
+            {
+                ApplicationArea = All;
+                Caption = 'Update Blank Suppliers';
+                Image = Report;
+
+                trigger OnAction()
+                begin
+                    Report.Run(Report::"Update Supplier ID");
+                end;
+            }
         }
     }
 
